@@ -1,33 +1,37 @@
 # 🤖 Sidekick: Personal AI Co-Worker
 
-Sidekick is an autonomous AI agent built with **LangGraph** and **Gradio**. Unlike standard chatbots, Sidekick uses a "Worker-Evaluator" architecture to browse the web, run Python code, manage files, and self-correct its work until it meets your specific success criteria.
+## 📝 What is Sidekick?
+Sidekick is not just a chatbot; it is an **autonomous agent** designed to handle complex tasks from start to finish. You give it a **Goal** and **Success Criteria**, and it works independently—browsing the web, writing files, and running code—until the job is done right.
+
+### How it works:
+1. **The Worker:** Searches the internet, reads Wikipedia, runs Python scripts, and manages local files.
+2. **The Evaluator:** A "manager" AI that reviews the Worker's output. If the result doesn't meet your specific criteria, the Evaluator sends it back with feedback to try again.
+3. **The Loop:** This cycle continues automatically until the task is perfect or it needs to ask you a question.
 
 ## ✨ Key Features
-
-* **Self-Evaluating Loops:** Uses an Evaluator node to check if the task meets your "Success Criteria" before finishing.
-* **Web Browsing:** Integrated with Playwright for real-time web navigation and data retrieval.
-* **Code Execution:** Built-in Python REPL for performing calculations or data processing.
-* **Push Notifications:** Can send alerts to your phone via Pushover when tasks are complete.
-* **Persistent Memory:** Uses `MemorySaver` to remember context across a single session.
+* **Web Research:** Uses Playwright and Google Serper to find real-time info.
+* **Code Execution:** Can write and run Python code to solve math or data problems.
+* **File Management:** Automatically creates and edits files in a local sandbox.
+* **Phone Alerts:** Sends you a push notification via Pushover when the task is done.
 
 ## 🛠️ Tech Stack
+* **Framework:** LangGraph (for the logic loops).
+* **UI:** Gradio (for the web interface).
+* **Model:** OpenAI GPT-4o-mini.
 
-* **Orchestration:** [LangGraph](https://github.com/langchain-ai/langgraph)
-* **LLM:** OpenAI GPT-4o-mini
-* **Interface:** Gradio
-* **Tools:** Playwright, Wikipedia API, Serper (Google Search), Python REPL.
+## 🚀 Installation & Setup
+1. **Clone the repo:**
+   ```bash
+   git clone [https://github.com/Anushka0206/sidekick-agent.git](https://github.com/Anushka0206/sidekick-agent.git)
+   cd sidekick-agent
 
-## 🚀 Getting Started
+2. **Install dependencies:**
+   pip install -r requirements.txt
+   playwright install chromium
 
-### 1. Prerequisites
-* Python 3.10+
-* An OpenAI API Key
-* A [Serper.dev](https://serper.dev/) API Key (for web search)
+3. **Setup**
+   Add your OPENAI_API_KEY and SERPER_API_KEY.
 
-### 2. Installation
-Clone the repository and install dependencies:
-```bash
-git clone [https://github.com/YOUR_USERNAME/sidekick.git](https://github.com/YOUR_USERNAME/sidekick.git)
-cd sidekick
-pip install -r requirements.txt
-playwright install chromium
+4. **Run**
+   python app.py
+   
